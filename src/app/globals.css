@@ -30,6 +30,30 @@ nav ul {
   height: 100%;
   padding: 20px;
 }
+.cozumlerPage {
+  display: grid;
+}
+.cozumler {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  grid-template-columns: repeat(4,1fr);
+}
+.cozumItem{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 250px;
+  border: 1px solid #cce;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 24px;
+}
+.cozumItem > a{
+color: unset;
+}
 
 .homeLeft,
 .homeRight {
@@ -45,6 +69,7 @@ nav ul li {
 
 .content {
   height: calc(100vh - 140px);
+  padding: 20px;
 }
 
 .contentLayout {
@@ -53,6 +78,9 @@ nav ul li {
 }
 
 .leftbar {
+  left: 0;
+  top: 100px;
+  position: fixed;
   padding: 4px;
   display: flex;
   flex-direction: column;
@@ -62,10 +90,24 @@ nav ul li {
   color: #fff;
   height: 100%;
 }
-
-.right {
+.leftbar > div{
+  cursor: pointer;
+  padding: 16px;
+  color: unset;
+  text-decoration: unset;
+}
+.leftbar > a:hover {
+ color: #ccccee;
 }
 
+.right {
+  margin-left: 220px;
+}
+.haberlerLayout {
+  display: flex;
+  height: 100%;
+
+}
 footer {
   background-color: #333;
   color: #fff;
@@ -74,4 +116,14 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+.button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  border-radius: 8px;
 }
