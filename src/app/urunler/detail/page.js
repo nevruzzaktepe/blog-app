@@ -1,20 +1,18 @@
 'use client'
-import { useRouter } from 'next/navigation'
-import React from 'react'
+import {useSearchParams} from "next/navigation";
+import {useEffect} from "react";
 
-const Urunler = () => {
-    const router=useRouter()
-    const handleClick=()=>{
-      router.push('/urunler/detail?q='+Math.random().toString(36))
-    }
-  return (
-    <div>
-        <h1>Urunler</h1>
-        <b onClick={handleClick}>Ürün 1</b>
-        <b onClick={handleClick}>Ürün 2</b>
+export default function Page(p){
+    const searchParams=useSearchParams()
 
-    </div>
-  )
+    useEffect(()=>{
+            const sp=searchParams.get('q')
+        alert(sp)
+
+    },[])
+    return(
+        <div>
+            Detail page {p.searchParams.q}
+        </div>
+    )
 }
-
-export default Urunler
